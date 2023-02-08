@@ -7,9 +7,27 @@
 
     <title>Who Said It</title>
 
-    <script type="module" src="client.js"></script>
+    <link rel="stylesheet" href="index.css" />
+
+    <script type="module" src="./src/client.js"></script>
   </head>
   <body>
     <h1>Who Said It</h1>
+
+    <div id="game">
+      <h2 id="question"></h2>
+
+      <div>
+        <button id="kanye">Kanye</button>
+        <button id="hitler">Hitler</button>
+      </div>
+
+      <h3 id="score">0/5</h3>
+    </div>
+
+    <div id="results">
+      <h2 id="result"></h2>
+      <button id="play-again">Play Again</button>
+    </div>
   </body>
 </html>
