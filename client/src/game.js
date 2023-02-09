@@ -1,5 +1,7 @@
 import questions from "./questions.js";
 
+import socket from "./client.js";
+
 export default function setup() {
   let currQuestionIdx = 0;
   let score = 0;
@@ -30,6 +32,8 @@ export default function setup() {
         score++;
         setScore(score);
       }
+
+      socket.emit("score-msg", score, socket.id);
 
       if (currQuestionIdx === questions.length - 1) {
         showResults();

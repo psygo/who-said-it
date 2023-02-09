@@ -2,8 +2,16 @@ import { io } from "socket.io-client";
 
 import setup from "./game.js";
 
-setup();
-
 const socket = io("http://localhost:8088");
 
-socket.on("connect", () => {});
+export default socket;
+
+socket.on("connect", () => {
+  console.log("Connected to server");
+});
+
+socket.on("other-scores", (score, id) => {
+  console.log(score, id);
+});
+
+setup();
